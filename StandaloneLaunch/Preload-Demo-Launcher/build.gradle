@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId 'org.alee.component.x.demo.preload'
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [COMPONENT_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        ignoreWarnings true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation rootProject.ext.Official_Library["appcompat"]
+    implementation project(path: ':StandaloneLaunch:Preload-Demo-Launcher:Preload-Demo')
+    if (CITING_THE_SOURCE_CODE.toBoolean()){
+        annotationProcessor project(path: ':Preload-Compiler')
+        implementation project(path: ':Preload-Core')
+        implementation project(path: ':Preload-Annotation')
+    }else {
+        annotationProcessor rootProject.ext.MX_Library["preload_compiler"]
+        implementation rootProject.ext.MX_Library["preload_annotation"]
+        implementation rootProject.ext.MX_Library["preload_core"]
+    }
+
+
+}

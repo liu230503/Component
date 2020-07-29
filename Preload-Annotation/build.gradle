@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+apply plugin: "com.github.johnrengelman.shadow"
+dependencies {
+}
+shadowJar {
+    baseName = 'Preload-Annotation'
+    archiveVersion = '1.1.1'
+}
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
