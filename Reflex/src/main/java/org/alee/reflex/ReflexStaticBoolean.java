@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
  *********************************************************/
 public final class ReflexStaticBoolean extends BaseStaticField {
 
-    public ReflexStaticBoolean(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexStaticBoolean(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
  *********************************************************/
 public final class ReflexStaticFloat extends BaseStaticField {
 
-    public ReflexStaticFloat(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexStaticFloat(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

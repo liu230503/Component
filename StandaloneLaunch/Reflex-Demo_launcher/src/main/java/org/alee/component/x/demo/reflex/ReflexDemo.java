@@ -11,20 +11,35 @@ import android.util.Log;
  *********************************************************/
 public class ReflexDemo {
 
+    private static final String TAG = "Reflex";
     private int mId = 0xff;
 
-    private static final String TAG = "Reflex";
-
-    private void doSomething(){
-        printLog(TAG,"I will do something!");
+    private void doSomething() {
+        printLog(TAG, "I will do something!");
     }
 
-    private Boolean doSomething(String something){
-        printLog(TAG,something);
+    private static void printLog(String tag, String message) {
+        Log.i(tag, message);
+    }
+
+    private Boolean doSomething(String something) {
+        printLog(TAG, something);
         return true;
     }
 
-    private static void printLog(String tag,String message){
-        Log.i(tag,message);
+    private class InternalClassDemo {
+
+        private InternalClassDemo() {
+            throw new RuntimeException("Object creation prohibited!");
+        }
+
+        public ReflexDemo getReflexDemo() {
+            return new ReflexDemo();
+        }
+
+
+        private void printLog(String tag, String message) {
+            ReflexDemo.printLog(tag, message);
+        }
     }
 }

@@ -13,7 +13,7 @@ abstract class BaseField {
 
     protected Field mField;
 
-    public BaseField(Class<?> cls, Field field) throws NoSuchFieldException {
+    BaseField(Class<?> cls, Field field) throws NoSuchFieldException {
         mField = cls.getDeclaredField(field.getName());
         mField.setAccessible(true);
     }

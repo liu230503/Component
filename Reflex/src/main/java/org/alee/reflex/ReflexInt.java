@@ -9,10 +9,10 @@ import java.lang.reflect.Field;
  * @description: xxxx
  *
  *********************************************************/
-public final class ReflexInt extends BaseField{
+public final class ReflexInt extends BaseField {
 
 
-    public ReflexInt(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexInt(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 
