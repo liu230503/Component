@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
 public final class ReflexObject<T> extends BaseField {
 
 
-    public ReflexObject(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexObject(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

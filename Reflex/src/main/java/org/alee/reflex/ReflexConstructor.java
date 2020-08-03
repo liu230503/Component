@@ -17,7 +17,7 @@ public final class ReflexConstructor<T> {
 
     private Constructor<?> mConstructor;
 
-    public ReflexConstructor(Class<?> cls, Field field) throws NoSuchMethodException {
+    ReflexConstructor(Class<?> cls, Field field) throws NoSuchMethodException {
         if (field.isAnnotationPresent(MethodParams.class)) {
             mConstructor = handleWithParams(cls, field.getAnnotation(MethodParams.class));
         } else if (field.isAnnotationPresent(MethodReflexParams.class)) {

@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 public final class ReflexStaticInt extends BaseStaticField {
 
 
-    public ReflexStaticInt(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexStaticInt(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

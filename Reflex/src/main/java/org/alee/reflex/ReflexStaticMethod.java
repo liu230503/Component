@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  *********************************************************/
 public final class ReflexStaticMethod<RESULT> extends BaseMethod {
 
-    public ReflexStaticMethod(Class<?> cls, Field field) throws NoSuchMethodException {
+    ReflexStaticMethod(Class<?> cls, Field field) throws NoSuchMethodException {
         super(cls, field);
     }
 
@@ -104,6 +104,7 @@ public final class ReflexStaticMethod<RESULT> extends BaseMethod {
         }
         return obj;
     }
+
     @SuppressWarnings("unchecked")
     public RESULT callWithException(Object... params) throws Throwable {
         try {

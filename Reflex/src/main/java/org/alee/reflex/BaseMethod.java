@@ -18,7 +18,7 @@ abstract class BaseMethod {
 
     protected Method mMethod;
 
-    public BaseMethod(Class<?> cls, Field field) throws NoSuchMethodException {
+    BaseMethod(Class<?> cls, Field field) throws NoSuchMethodException {
         if (field.isAnnotationPresent(MethodParams.class)) {
             mMethod = handleWithParams(cls, field);
         } else if (field.isAnnotationPresent(MethodReflexParams.class)) {

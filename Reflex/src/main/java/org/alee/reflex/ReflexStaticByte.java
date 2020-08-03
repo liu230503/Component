@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
  *********************************************************/
 public final class ReflexStaticByte extends BaseStaticField {
 
-    public ReflexStaticByte(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexStaticByte(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

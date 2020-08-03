@@ -12,14 +12,14 @@ import java.lang.reflect.Modifier;
  * @description: xxxx
  *
  *********************************************************/
-abstract class BaseStaticField extends BaseField{
+abstract class BaseStaticField extends BaseField {
 
-    public BaseStaticField(Class<?> cls, Field field) throws NoSuchFieldException {
+    BaseStaticField(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
         checkIsStatic(cls, mField);
     }
 
-    protected void checkIsStatic(Class<?> cls, Field field){
+    protected void checkIsStatic(Class<?> cls, Field field) {
         if (!Modifier.isStatic(field.getModifiers())) {
             throw new NotStaticException(cls, field);
         }

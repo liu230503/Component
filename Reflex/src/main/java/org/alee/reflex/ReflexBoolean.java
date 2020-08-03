@@ -9,9 +9,9 @@ import java.lang.reflect.Field;
  * @description: Boolean 类型的反射实现
  *
  *********************************************************/
-public final class ReflexBoolean extends BaseField{
+public final class ReflexBoolean extends BaseField {
 
-    public ReflexBoolean(Class<?> cls, Field field) throws NoSuchFieldException {
+    ReflexBoolean(Class<?> cls, Field field) throws NoSuchFieldException {
         super(cls, field);
     }
 

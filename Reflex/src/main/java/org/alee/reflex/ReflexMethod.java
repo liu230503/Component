@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  *********************************************************/
 public final class ReflexMethod<RESULT> extends BaseMethod {
 
-    public ReflexMethod(Class<?> cls, Field field) throws NoSuchMethodException {
+    ReflexMethod(Class<?> cls, Field field) throws NoSuchMethodException {
         super(cls, field);
     }
 
