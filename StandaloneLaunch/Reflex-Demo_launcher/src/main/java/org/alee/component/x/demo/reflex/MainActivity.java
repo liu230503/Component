@@ -2,8 +2,10 @@ package org.alee.component.x.demo.reflex;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void getView() {
         mTextView = findViewById(R.id.tv);
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @NonNull
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         //        mTextView.setText("mValue = " + mValue + "\r\n" + "sIsChanged = " + sIsChanged);
     }
 }

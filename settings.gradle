@@ -1,3 +1,4 @@
+include ':StandaloneLaunch:Repeat-Click-Remover-Demo-Launcher'
 include ':StandaloneLaunch:Reflex-Demo_launcher'
 include ':StandaloneLaunch:Preload-Demo-Launcher:Preload-Demo'
 include ':StandaloneLaunch:Preload-Demo-Launcher'
@@ -8,5 +9,6 @@ if (CITING_THE_SOURCE_CODE.toBoolean()){
     include ':Preload-Compiler'
     include ':Preload-Annotation'
     include ':Preload-Core'
+    include ':Repeat-Click-Remover'
 }
 rootProject.name = "Component"
