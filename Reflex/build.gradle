@@ -6,7 +6,7 @@ dependencies {
 
 shadowJar {
     baseName = 'Reflex'
-    archiveVersion = '1.0.0'
+    archiveVersion = '1.3.0'
 }
 compileJava {
     sourceCompatibility = '1.8'
