@@ -1,10 +1,12 @@
 include ':StandaloneLaunch:Reflex-Demo_launcher'
-include ':Reflex'
 include ':StandaloneLaunch:Preload-Demo-Launcher:Preload-Demo'
 include ':StandaloneLaunch:Preload-Demo-Launcher'
-include ':Base-Compiler'
-include ':Preload-Compiler'
-include ':Preload-Annotation'
-include ':Preload-Core'
 include ':app'
+if (CITING_THE_SOURCE_CODE.toBoolean()){
+    include ':Reflex'
+    include ':Base-Compiler'
+    include ':Preload-Compiler'
+    include ':Preload-Annotation'
+    include ':Preload-Core'
+}
 rootProject.name = "Component"
