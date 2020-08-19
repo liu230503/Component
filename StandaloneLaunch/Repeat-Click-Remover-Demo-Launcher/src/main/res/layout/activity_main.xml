@@ -14,7 +14,15 @@
         android:id="@+id/btn_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1秒只可点击一次测试按钮"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:text="1秒只可点击一次测试按钮" />
+
+    <Button
+        android:id="@+id/btn_click2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_click"
+        android:layout_centerHorizontal="true"
+        android:text="1秒只可点击一次测试按钮2" />
 
 </RelativeLayout>

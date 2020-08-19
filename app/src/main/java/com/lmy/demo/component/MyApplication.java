@@ -3,7 +3,6 @@ package com.lmy.demo.component;
 import android.app.Application;
 import android.content.Context;
 
-import org.alee.component.x.preload.annotation.Preloading;
 
 
 /**********************************************************

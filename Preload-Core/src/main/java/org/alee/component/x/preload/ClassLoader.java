@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
 import android.util.Log;
 
 import java.io.File;

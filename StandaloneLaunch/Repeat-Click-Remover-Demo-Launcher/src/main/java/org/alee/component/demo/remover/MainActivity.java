@@ -21,8 +21,18 @@ public class MainActivity extends AppCompatActivity {
             @RepeatedClick
             @Override
             public void onClick(View v) {
-                Log.i(TAG, v.getId()+"is On Click");
+                Log.i(TAG, v.getId() + "is On Click");
+
             }
         });
+        Button button2 = findViewById(R.id.btn_click2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @RepeatedClick(interval = 500)
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, v.getId() + "is On Click");
+            }
+        });
+
     }
 }

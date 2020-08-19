@@ -1,5 +1,6 @@
 package org.alee.compinent.remover;
 
+import android.util.LruCache;
 import android.view.View;
 
 /**********************************************************
@@ -11,13 +12,9 @@ import android.view.View;
  *********************************************************/
 public class ClickDeduplicator {
     /**
-     * 最后一次点击时间
+     * 点击事件缓存
      */
-    private static long sLastClickTime;
-    /**
-     * 最后一次点击的view 的id
-     */
-    private static int sLastClickViewId;
+    private static LruCache<Integer, Long> sClickCache = new LruCache<>(30);
 
     /**
      * 判断是否快速点击
@@ -29,12 +26,19 @@ public class ClickDeduplicator {
     public static boolean isFastDoubleClick(View v, long interval) {
         int viewId = v.getId();
         long time = System.currentTimeMillis();
-        long timeInterval = Math.abs(time - sLastClickTime);
-        if (sLastClickViewId == viewId && timeInterval < interval) {
+        if (null == sClickCache.get(viewId)) {
+            saveLastClick(viewId, time);
+            return false;
+        }
+        long timeInterval = Math.abs(time - sClickCache.get(viewId));
+        if (timeInterval < interval) {
             return true;
         }
-        sLastClickTime = time;
-        sLastClickViewId = viewId;
+        saveLastClick(viewId, time);
         return false;
+    }
+
+    private static void saveLastClick(int viewId, long clickTime) {
+        sClickCache.put(viewId, clickTime);
     }
 }
