@@ -53,7 +53,11 @@ public final class ReflexClass {
 
     public static Class<?> load(Class<?> mappingClass, String realClassName) {
         try {
-            return load(mappingClass, Class.forName(realClassName));
+            Class realClass = Class.forName(realClassName);
+            if (null == realClass) {
+                realClass = mappingClass.getClassLoader().loadClass(realClassName);
+            }
+            return load(mappingClass, realClass);
         } catch (Exception ignore) {
             return null;
         }
