@@ -1,3 +1,5 @@
+include ':Router-Annotation'
+include ':Router'
 include ':StandaloneLaunch:Repeat-Click-Remover-Demo-Launcher'
 include ':StandaloneLaunch:Reflex-Demo_launcher'
 include ':StandaloneLaunch:Preload-Demo-Launcher:Preload-Demo'
